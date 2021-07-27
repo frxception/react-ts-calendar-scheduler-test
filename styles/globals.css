@@ -1,0 +1,28 @@
+html,
+body {
+  margin: 0;
+  font-family: 'verdana','Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(43, 43, 43);
+  color: rgb(198, 198, 198);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+code {
+  font-family: Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+    color: gray
+
+}
+
