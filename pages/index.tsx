@@ -96,17 +96,16 @@ const Home:FC<Props> = (props) => {
                   selectable={true}
                   selectMirror={true}
                   dayMaxEvents={true}
+                  eventBackgroundColor="rgb(53, 53, 53)"
+                  eventBorderColor="rgb(75, 75, 75)"
+                  eventTextColor="rgb(171, 171, 171)"
                   weekends={weekendsVisible}
                   initialEvents={INITIAL_EVENTS} // alternatively, use the `events` setting to fetch from a feed
                   select={handleDateSelect}
                   eventContent={renderEventContent} // custom render function
                   eventClick={handleEventClick}
                   eventsSet={handleEvents} // called after events are initialized/added/changed/removed
-                  /* you can update a remote database when these fire:
-                  eventAdd={function(){}}
-                  eventChange={function(){}}
-                  eventRemove={function(){}}
-                  */
+                  
                 />
               </div>
           </div>
