@@ -5,7 +5,7 @@ import styles from "@styles/NavBar.module.css";
 
 const Logo = () => (
   <div className={styles.logoWrapper}>
-    <h2 className={styles.logoTxth2}>CaringCompany</h2>
+    <h2 className={styles.logoTxth2}>Caring</h2>Company
   </div>
 );
 

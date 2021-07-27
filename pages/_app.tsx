@@ -1,14 +1,18 @@
 
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { FC } from 'react';
-import { AppProps } from 'next/app';
 import Head from 'next/head';
 
+import '@fullcalendar/common/main.css'
+import '@styles/fullcalendar/time-grid.main.css'
+import '@fullcalendar/daygrid/main.css'
+import '@fullcalendar/timeline/main.css'
+import '@fullcalendar/resource-timeline/main.css'
 import '@styles/globals.css'
 import NavBar from '@src/components/NavBar';
 
 
-const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
+const MyApp = ({ Component, pageProps }) => {
   return (
     <>
       <Head>

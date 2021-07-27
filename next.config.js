@@ -1,14 +1,26 @@
-module.exports = {
-    env: {
-        GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
-        GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET
-    },
-    webpackDevMiddleware: config => {
-      config.watchOptions = {
-        poll: 1000,
-        aggregateTimeout: 300,
-      }
-  
-      return config
-    },
-  }
+const withTM = require('next-transpile-modules')([
+  "@fullcalendar/core",
+  '@fullcalendar/common',
+  '@fullcalendar/react',
+  '@fullcalendar/daygrid',
+  "@fullcalendar/timegrid",
+  "@fullcalendar/interaction",
+  "@fullcalendar/resource-timeline",
+  "@fullcalendar/timeline"
+
+]);
+
+module.exports = withTM({
+  // any other general next.js settings
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+})
+
+
+// const nextTranspileModules = require('next-transpile-modules')([
+//     '@fullcalendar'
+//   ]);
+// module.exports = nextTranspileModules({})
+// const withSass = require('@zeit/next-sass');
+// module.exports = withSass();

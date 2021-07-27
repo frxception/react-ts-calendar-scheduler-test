@@ -1,7 +1,4 @@
-# Nextjs Github Demo App
-
-#### Deployed codes [See live app](https://nextjs-github-demo.vercel.app/)
-
+# React NextJS Full Calendar Scheduler UI Test
 
 
 ## Getting Started
@@ -73,7 +70,7 @@ docker-compose up
 # Project
 
 ### Stack:
-- Github API
+- Fullcalendar React Library
 - NextJS
 - Responsive CSS Modules
 - React
