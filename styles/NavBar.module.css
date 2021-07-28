@@ -7,7 +7,6 @@
   padding: 0 1.5em;
   background-color: #2e2e2e;
   color: white !important;
-
 }
 
 .leftSide {
@@ -20,7 +19,7 @@
 .mainLinks {
   display: flex;
   flex: 2;
-  height: 100%;
+  /* height: 100%; */
   justify-content: center;
 }
 

@@ -20,6 +20,7 @@ const MyApp = ({ Component, pageProps }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
         <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
         <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+        <script src='https://unpkg.com/tooltip.js/dist/umd/tooltip.min.js'></script>
     
       </Head>
       <NavBar />

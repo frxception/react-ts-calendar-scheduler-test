@@ -1,20 +1,23 @@
 import React, { FC, useState } from 'react';
 import Head from 'next/head';
-import FullCalendar, { EventApi, DateSelectArg, EventClickArg, EventContentArg } from '@fullcalendar/react'
+import FullCalendar, { EventApi, DateSelectArg, EventClickArg, EventContentArg, formatDate } from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
+import { BsFillCalendarFill, BsChatSquareQuoteFill, BsExclamationSquareFill,
+  BsChatSquareDotsFill, BsFillArchiveFill, BsFillEnvelopeFill, BsFillInfoSquareFill, BsExclamationTriangleFill
+ } from "react-icons/bs";
 
 import CustomFooter from '@src/components/Footer'
 import styles from '@styles/Home.module.css'
 import { createEventId, INITIAL_EVENTS } from '@src/utils/event';
 import SideBar from '@src/components/SideBar';
+
 // @ts-ignore
 interface Props  {
   weekendsVisible: Boolean;
   currentEvents: EventApi[];
 }
-
 
 // @ts-ignore
 const Home:FC<Props> = (props) => {
@@ -22,10 +25,37 @@ const Home:FC<Props> = (props) => {
   const [currentEvents, setCurrentEvents] = useState<EventApi[]>([]);
 
   const renderEventContent = (eventContent: EventContentArg) => {
+  // @ts-ignore
+  const iconName = eventContent.event.extendedProps.iconName;
+    
+  const txtTime = () => {
+    if(eventContent.view.type === 'dayGridMonth'){
+      let timeTxt = eventContent.timeText + '';
+      console.log(">>>>TIME: timeTxt: ", timeTxt)
+      if (timeTxt.includes('a')) {
+        return timeTxt.replaceAll('a', 'am')
+      }else
+      if (timeTxt.includes('p')) {
+        return timeTxt.replaceAll('p', 'pm')
+      }
+    }
+    
+    return eventContent.timeText;
+  }
     return (
-      <>
-        <b>{eventContent.timeText}</b>
-        <i>{eventContent.event.title}</i>
+      <>  
+        { iconName === 'BsFillCalendarFill' ? <BsFillCalendarFill size={30} className={styles.fcEventIcon}/> : ""}
+        { iconName === 'BsChatSquareQuoteFill' ? <BsChatSquareQuoteFill size={30} className={styles.fcEventIcon}/> : ""}
+        { iconName === 'BsExclamationSquareFill' ? <BsExclamationSquareFill size={30} className={styles.fcEventIcon}/> : ""}
+        {iconName === 'BsChatSquareDotsFill' ? <BsChatSquareDotsFill size={30} className={styles.fcEventIcon}/> : ""}
+        {iconName === 'BsFillArchiveFill' ? <BsFillArchiveFill size={30} className={styles.fcEventIcon}/> : ""}
+        {iconName === 'BsFillEnvelopeFill' ? <BsFillEnvelopeFill size={30} className={styles.fcEventIcon}/> : ""}
+        {iconName === 'BsFillInfoSquareFill' ? <BsFillInfoSquareFill size={30} className={styles.fcEventIcon}/> : ""}
+        {iconName === 'BsExclamationTriangleFill' ? <BsExclamationTriangleFill size={30} className={styles.fcEventIcon}/> : ""}
+        
+        <b style={{color:'white'}}>&nbsp;{txtTime()}&nbsp;</b>
+        <span>{eventContent.event.title}</span>
+
       </>
     )
   }
@@ -43,11 +73,9 @@ const Home:FC<Props> = (props) => {
 
   
   const handleWeekendsToggle = () => {
-    // this.setState({
-    //   weekendsVisible: !this.state.weekendsVisible
-    // })
     setWeekendsVisible(!weekendsVisible)
   }
+
 
   const handleDateSelect = (selectInfo: DateSelectArg) => {
     let title = prompt('Please enter a new title for your event')
@@ -55,17 +83,22 @@ const Home:FC<Props> = (props) => {
 
     calendarApi.unselect() // clear date selection
 
+    const colors: string[] = [ 'blue', 'green', 'orange', 'purple', 'red', 'yellow', 'cyan'];
+    const randColorIdx = Math.floor(Math.random() * 7);
     if (title) {
-      calendarApi.addEvent({
+      calendarApi.addEvent({ 
         id: createEventId(),
         title,
         start: selectInfo.startStr,
         end: selectInfo.endStr,
-        allDay: selectInfo.allDay
+        allDay: selectInfo.allDay,
+        className: `fc-v-event-${colors[randColorIdx]}`,
+        iconName: 'BsExclamationTriangleFill'
       })
     }
   }
-  
+
+
   return (
     
     <>
@@ -91,7 +124,8 @@ const Home:FC<Props> = (props) => {
                     right: 'title',
                     center: 'dayGridMonth,timeGridWeek,timeGridDay'
                   }}
-                  initialView='dayGridMonth'
+                  initialView='timeGridWeek'
+                  eventContent={renderEventContent} // custom render function
                   editable={true}
                   selectable={true}
                   selectMirror={true}
@@ -100,16 +134,23 @@ const Home:FC<Props> = (props) => {
                   eventBorderColor="rgb(75, 75, 75)"
                   eventTextColor="rgb(171, 171, 171)"
                   weekends={weekendsVisible}
-                  initialEvents={INITIAL_EVENTS} // alternatively, use the `events` setting to fetch from a feed
+                  initialEvents={INITIAL_EVENTS} 
                   select={handleDateSelect}
-                  eventContent={renderEventContent} // custom render function
                   eventClick={handleEventClick}
-                  eventsSet={handleEvents} // called after events are initialized/added/changed/removed
+                  eventsSet={handleEvents} 
+                  allDaySlot={false}
+                  scrollTime={1000}
+                  // dayHeaderFormat={{ weekday: 'short', month: 'numeric', day: 'numeric', 
+                  // omitCommas: true, omitZeroMinute: true }}
+                  nowIndicator={true}
+                  slotLaneClassNames="slot_height_hours"
+                  eventMinHeight={100}
                   
                 />
               </div>
           </div>
 
+        
 
         </main>
 

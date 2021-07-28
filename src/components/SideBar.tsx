@@ -1,13 +1,13 @@
 import React, { FC } from "react";
 import { EventApi, formatDate } from "@fullcalendar/react";
 import styles from '@styles/Home.module.css'
-// @ts-ignore
+
 type Props = {
   weekendsVisible: boolean;
   currentEvents: EventApi[];
   handleWeekendsToggle: (any) => void;
 }
-// @ts-ignore
+
 const SideBar: FC<Props> = ({
   weekendsVisible,
   currentEvents,
@@ -30,15 +30,13 @@ const SideBar: FC<Props> = ({
 
   return (
     <div className={styles.demoAppSidebar}>
-     
       <div className={styles.demoAppSidebarSection}>
         <label>
           <input
             type="checkbox"
             checked={weekendsVisible}
-            onChange={handleWeekendsToggle}
-          ></input>
-          toggle weekends
+            onChange={handleWeekendsToggle}></input>
+          &nbsp;Show weekends
         </label>
       </div>
       <div className={styles.demoAppSidebarSection}>

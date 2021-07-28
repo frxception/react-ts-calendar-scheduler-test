@@ -72,3 +72,10 @@
   max-width: 1100px;
   margin: 0 auto;
 }
+
+.fcEventIcon{
+  padding-right: 8px;
+  margin-top: -5px;
+  color: rgb(99, 99, 99) !important;
+}
+

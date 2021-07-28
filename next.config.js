@@ -6,10 +6,8 @@ const withTM = require('next-transpile-modules')([
   "@fullcalendar/timegrid",
   "@fullcalendar/interaction",
   "@fullcalendar/resource-timeline",
-  "@fullcalendar/timeline"
-
+  "@fullcalendar/timeline",
 ]);
-
 module.exports = withTM({
   // any other general next.js settings
   typescript: {

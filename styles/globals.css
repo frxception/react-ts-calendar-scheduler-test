@@ -43,10 +43,11 @@ code {
 
 .fc-timegrid-event-harness-inset .fc-timegrid-event, .fc-timegrid-event.fc-event-mirror, .fc-timegrid-more-link {
   box-shadow: 0px 0px 0px 1px #626262;
+  padding: 5px;
 }
 
-.fc .fc-timegrid-col.fc-day-today {
-  background-color: rgb(62 62 62 / 15%);
+.fc .fc-timegrid-col.fc-day-today {  background-color: rgb(62 62 62 / 15%);
+
 }
 
 
@@ -101,4 +102,72 @@ code {
   color: #fff;
   background-color: #323435 !important;
   border-color: rgb(23, 21, 21);
+}
+
+.fc-v-event-blue {
+  border-left: 8px solid #3788d8 !important;
+  padding-left: 7px;
+  margin-left: 0px;
+
+}
+
+.fc-v-event-green {
+  border-left: 8px solid #17ad2e !important;
+  padding-left: 7px;
+  margin-left: 0px;
+
+}
+
+.fc-v-event-orange {
+  border-left: 8px solid #df7c11 !important;
+  padding-left: 7px;
+  margin-left: 0px;
+}
+
+.fc-v-event-purple {
+  border-left: 8px solid #9e40c9 !important;
+  padding-left: 7px;
+  margin-left: 0px;
+
+}
+
+.fc-v-event-red {
+  border-left: 8px solid #964949 !important;
+  padding-left: 7px;
+  margin-left: 0px;
+
+}
+
+.fc-v-event-yellow {
+  border-left: 8px solid #f9e93b !important;
+  padding-left: 7px;
+  margin-left: 0px;
+
+}
+
+.fc-v-event-cyan {
+  border-left: 8px solid cyan !important;
+  padding-left: 7px;
+  margin-left: 0px;
+
+}
+
+
+
+.slot_height_hours{
+  height: 50px !important;
+}
+
+.fc-daygrid-event-harness{
+  margin-top: 0px;
+  padding-top: 5px;
+  padding-bottom: 4px;
+  border: 1px solid rgb(89, 89, 89);
+  color: rgb(198, 198, 198);
+}
+
+
+.fc-timegrid-event .fc-event-main {
+  padding: 1px 0px 0;
+  display: flex;
 }
