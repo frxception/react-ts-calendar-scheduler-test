@@ -42,15 +42,15 @@ npm run start
 ##### Running nextjs app with docker and open http://localhost:3000 in your browser.
 ```sh
 
-docker build . -t nextjs-github-demo-app.v1
+docker build . -t react-ts-calendar-scheduler-test.v1
 
 # and 
 
-docker run -it nextjs-github-demo-app.v1
+docker run -it react-ts-calendar-scheduler-test.v1
 
 # or 
 
-docker run -p 3000:3000 nextjs-github-demo-app
+docker run -p 3000:3000 react-ts-calendar-scheduler-test
 
 
 # to stop the image running

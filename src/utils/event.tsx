@@ -19,16 +19,15 @@ export const INITIAL_EVENTS: EventInput[] = [
   }, 
   {
     id: createEventId(),
-    title: 'First event',
+    title: 'Second event',
     start: todayStr + 'T10:00:00',
     className: "fc-v-event-yellow",
     iconName: 'BsFillEnvelopeFill'
   }, 
 
-
   {
     id: createEventId(),
-    title: 'Timed event with',
+    title: 'Third event',
     start: todayStr + 'T24:00:00',
     className: "fc-v-event-orange",
     iconName: 'BsChatSquareQuoteFill'
@@ -36,7 +35,7 @@ export const INITIAL_EVENTS: EventInput[] = [
   },
   {
     id: createEventId(),
-    title: 'Timed event with',
+    title: 'Fourth event',
     start: todayStr + 'T30:00:00',
     className: "fc-v-event-blue",
     iconName: 'BsExclamationSquareFill'
@@ -44,7 +43,7 @@ export const INITIAL_EVENTS: EventInput[] = [
   },
   {
     id: createEventId(),
-    title: 'Timed event with',
+    title: 'Fifth event',
     start: todayStr + 'T40:00:00',
     className: "fc-v-event-purple",
     iconName: 'BsChatSquareDotsFill'
